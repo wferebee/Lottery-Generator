@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Random</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css\style.css">
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <div class="jumbotron">
+
+    <h1 class="text-center">Generate a Random Lottery Number!</h1>
+    
+    <h6>by WILLIAM FEREBEE</h6>
+
+    <h3>Click the button up to 8 times to create an 8 digit lotto number. Keep clicking to make more numbers!</h3>
+    <p id ="code">
+            LOTTERY GENERATOR - RELEVANT CODE<br><br>
+          $(document).ready(function(){  <br><br>
+      
+          var limit = [];  <br><br>
+      
+          $("#random-button").on("click", function(){  <br><br>
+              var random = Math.floor(Math.random() * 9) + 1;  <br>
+              $("#random-number").append(random);  <br><br>
+              
+              limit.push(random)  <br>
+              var x = limit.length  <br>  <br>
+      
+                  if (x%8===0){  <br>
+                      $("#random-number").append("" + "(br)*");  -------   * the (br)* is a   < b r >   <br>
+                  }  <br>
+          });  <br>
+          });  <br>
+    </p>
+
+    <div class="text-center">
+
+      <!-- Here we have our button for generating random numbers (#random-button) -->
+      <button id="random-button" class="btn btn-primary btn-lg"><h1><span class="fa fa-question"></span></h1></button>
+      
+    </div>
+
+  </div>
+
+  <!-- Here we have div called "random-number" where our random number will go -->
+  <h1 class="text-center" id="random-number"></h1>
+
+  <script src="javascript\javascript.js"></script>
+  
+</body>
+</html>
